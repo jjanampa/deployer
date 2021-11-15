@@ -100,9 +100,7 @@ task('teams:notify', function () {
         'text'       => get('teams_text')
     ])->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Teams about deploy finish');
 task('teams:notify:success', function () {
@@ -115,9 +113,7 @@ task('teams:notify:success', function () {
         'text'       => get('teams_success_text')
     ])->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Teams about deploy failure');
 task('teams:notify:failure', function () {
@@ -130,6 +126,4 @@ task('teams:notify:failure', function () {
         'text'       => get('teams_failure_text')
     ])->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();

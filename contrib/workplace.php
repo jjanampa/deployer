@@ -102,9 +102,7 @@ task('workplace:notify', function () {
         set('workplace_webhook', $url);
     }
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Workplace about deploy finish');
 task('workplace:notify:success', function () {
@@ -114,9 +112,7 @@ task('workplace:notify:success', function () {
     $url = get('workplace_webhook') . '&message=' . urlencode(get('workplace_success_text'));
     return Httpie::post($url)->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Workplace about deploy failure');
 task('workplace:notify:failure', function () {
@@ -126,6 +122,4 @@ task('workplace:notify:failure', function () {
     $url = get('workplace_webhook') . '&message=' . urlencode(get('workplace_failure_text'));
     return Httpie::post($url)->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();

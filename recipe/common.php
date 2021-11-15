@@ -182,18 +182,14 @@ task('deploy:publish', [
  */
 task('deploy:success', function () {
     info('successfully deployed!');
-})
-    ->shallow()
-    ->hidden();
+})->hidden();
 
 
 /**
  * Hook on deploy failure.
  */
 task('deploy:failed', function () {
-})
-    ->shallow()
-    ->hidden();
+})->hidden();
 
 fail('deploy', 'deploy:failed');
 

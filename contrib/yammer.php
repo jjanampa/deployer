@@ -88,9 +88,7 @@ task('yammer:notify', function () {
         ->jsonBody($params)
         ->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Yammer about deploy finish');
 task('yammer:notify:success', function () {
@@ -108,9 +106,7 @@ task('yammer:notify:success', function () {
         ->jsonBody($params)
         ->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Yammer about deploy failure');
 task('yammer:notify:failure', function () {
@@ -128,6 +124,4 @@ task('yammer:notify:failure', function () {
         ->jsonBody($params)
         ->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();

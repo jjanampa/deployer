@@ -111,9 +111,7 @@ task('slack:notify', function () {
     $result = Httpie::post(get('slack_webhook'))->jsonBody(['channel' => get('slack_channel'), 'attachments' => [$attachment]])->send();
     checkSlackAnswer($result);
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Slack about deploy finish');
 task('slack:notify:success', function () {
@@ -131,9 +129,7 @@ task('slack:notify:success', function () {
     $result = Httpie::post(get('slack_webhook'))->jsonBody(['channel' => get('slack_channel'), 'attachments' => [$attachment]])->send();
     checkSlackAnswer($result);
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Slack about deploy failure');
 task('slack:notify:failure', function () {
@@ -151,9 +147,7 @@ task('slack:notify:failure', function () {
     $result = Httpie::post(get('slack_webhook'))->jsonBody(['channel' => get('slack_channel'), 'attachments' => [$attachment]])->send();
     checkSlackAnswer($result);
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Slack about rollback');
 task('slack:notify:rollback', function () {
@@ -171,6 +165,4 @@ task('slack:notify:rollback', function () {
     $result = Httpie::post(get('slack_webhook'))->jsonBody(['channel' => get('slack_channel'), 'attachments' => [$attachment]])->send();
     checkSlackAnswer($result);
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();

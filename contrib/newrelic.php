@@ -54,6 +54,4 @@ task('newrelic:notify', function () {
             ->send();
     }
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();

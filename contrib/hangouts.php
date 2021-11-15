@@ -99,9 +99,7 @@ task('chat:notify', function () {
 
     Httpie::post(get('chat_webhook'))->jsonBody(['cards' => $card])->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Google Hangouts Chat about deploy finish');
 task('chat:notify:success', function () {
@@ -142,9 +140,7 @@ task('chat:notify:success', function () {
 
     Httpie::post(get('chat_webhook'))->jsonBody(['cards' => $card])->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
 
 desc('Notifies Google Hangouts Chat about deploy failure');
 task('chat:notify:failure', function () {
@@ -186,6 +182,4 @@ task('chat:notify:failure', function () {
 
     Httpie::post(get('chat_webhook'))->jsonBody(['cards' => $card])->send();
 })
-    ->once()
-    ->shallow()
-    ->hidden();
+    ->once()    ->hidden();
