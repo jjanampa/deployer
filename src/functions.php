@@ -195,6 +195,7 @@ function task(string $name, $body = null): Task
     }
 
     $task->saveSourceLocation();
+    $deployer->tasks->set($name, $task);
 
     if (!empty(desc())) {
         $task->desc(desc());
