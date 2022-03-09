@@ -72,7 +72,7 @@ task('deploy:update_code', function () {
     $git = get('bin/git');
     $repository = get('repository');
     $target = get('target');
-    $subtarget = !empty(get('sub_directory')) ? "$target:{{sub_directory}}" : $target;
+    $subtarget = $target;
 
     $bare = parse('{{deploy_path}}/.dep/repo');
     $env = [
